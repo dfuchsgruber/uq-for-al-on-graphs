@@ -3,7 +3,7 @@
 This is the official implementation of our paper 
 
 *[Uncertainty for Active Learning on Graphs](https://arxiv.org/abs/2405.01462)*  
-Dominik Fuchsgruber*, Tom Wollschläger*, Stephan Günnemann  
+Dominik Fuchsgruber*, Tom Wollschläger*, Bertrand Charpentier, Antonio Oroz, Stephan Günnemann  
 Published at ICML 2024.
 
 <p align="center"><img src="overview.png"><br />Selecting a node with maximal epistemic uncertainty is optimal as it increases the confidence of the classifier in the correct prediction the most.</p>
