@@ -1,0 +1,5 @@
+defaults:
+  - base_adam
+
+lr: 1e-3
+weight_decay: 1e-4

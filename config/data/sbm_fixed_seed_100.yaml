@@ -1,0 +1,17 @@
+defaults:
+  - base_random_sbm
+
+num_classes: 4
+num_nodes: 100
+feature_dim: '${eval:\(max\(${data.num_classes}\, int\(np.ceil\(${data.num_nodes} / np.log\(${data.num_nodes}\)**2\)\)\)\)}'
+feature_class_mean_sampling: EQUIDISTANT
+feature_class_mean_distance: 0.1
+edge_probabilities: BY_SNR_AND_EXPECTED_DEGREE
+expected_degree: 8
+directed: False
+feature_sigma: 1.0
+edge_probability_snr: 3.0
+seed: 1337
+
+name: sbm_fixed_seed_100
+

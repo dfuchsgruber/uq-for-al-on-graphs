@@ -1,0 +1,5 @@
+defaults:
+  - base_approximate_uncertainty
+
+higher_is_better: true # Query higher uncertainty values first
+name: approximate_uncertainty_subsample_${acquisition_strategy.subsample_pool}_lon_${acquisition_strategy.aleatoric_confidence_with_left_out_node}_alea_samples_${acquisition_strategy.aleatoric_confidence_labels_num_samples}

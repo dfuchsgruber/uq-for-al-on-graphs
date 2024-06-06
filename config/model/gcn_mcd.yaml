@@ -1,0 +1,5 @@
+defaults:
+  - gcn
+  - mcd
+name: gcn_mcd
+inplace: false # does not work with multiple samples

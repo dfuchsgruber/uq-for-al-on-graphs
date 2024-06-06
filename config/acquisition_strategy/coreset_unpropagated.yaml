@@ -1,0 +1,6 @@
+defaults:
+  - base_coreset
+
+propagated: false
+name: coreset_unpropagated
+distance: LATENT_FEATURES

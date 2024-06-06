@@ -1,0 +1,14 @@
+defaults:
+  - base_seal
+  - trainer: seal
+
+dropout: 0.5
+discriminator_dropout: 0.5
+hidden_dims: [16]
+hidden_dims_discriminator: [128, 128]
+delta: 0.6
+
+trainer:
+  early_stopping:
+    patience: 50
+    save_model_state: True

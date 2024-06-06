@@ -1,0 +1,5 @@
+defaults:
+  - base_anrmab
+
+name: anrmab
+num_clusters: 6

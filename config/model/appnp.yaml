@@ -1,0 +1,19 @@
+defaults:
+  - base_appnp
+  - trainer: sgd
+
+hidden_dims: [64]
+dropout: 0.0
+cached: True
+inplace: False
+k: 10
+alpha: 0.1
+name: appnp
+
+trainer:
+  optimizer:
+    lr: 1e-3
+    weight_decay: 1e-4
+  early_stopping:
+    patience: 50
+    save_model_state: True

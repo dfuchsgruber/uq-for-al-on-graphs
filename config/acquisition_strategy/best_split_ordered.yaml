@@ -1,0 +1,9 @@
+# uses the best pool in a fixed order
+
+defaults:
+  - base_best_ordered_split
+  - _self_
+
+results_directory: /ceph/hdd/staff/fuchsgru/graph-al/optimize_best_split_order/${data.name}/results
+name: best_split_ordered
+requires_model_prediction: false

@@ -1,0 +1,10 @@
+defaults:
+#  - base_npz
+  - base_torch_geometric
+root: /nfs/staff-hdd/fuchsgru/graph-al/data
+torch_geometric_dataset: AMAZON_PHOTOS
+
+name: amazon_photos
+num_classes: 8
+
+# has 8 classes

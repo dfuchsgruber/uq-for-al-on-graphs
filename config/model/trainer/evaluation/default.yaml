@@ -1,0 +1,7 @@
+defaults:
+  - base_trainer_evaluation
+  - ece: base_ece
+
+ece:
+  num_bins: 20
+

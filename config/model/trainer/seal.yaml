@@ -1,0 +1,18 @@
+defaults:
+  - base_sgd
+  - base_seal
+  - optimizer: adam
+  - optimizer/adam@discriminator_optimizer
+  - evaluation: default
+
+optimizer:
+  lr: 0.01
+  weight_decay: 5e-4
+
+discriminator_optimizer:
+  lr: 0.01
+  weight_decay: 0
+
+num_samples: 1
+num_discriminator_epochs: 1
+max_epochs: 1

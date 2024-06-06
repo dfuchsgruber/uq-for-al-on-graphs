@@ -1,0 +1,16 @@
+# an SBM with low structural SNR and features and 12 nodes and 4 classes
+# to verify that our method has merit also on randomly sampled SBMs
+
+defaults:
+  - base_random_sbm
+  - default_likelihood_cache
+
+num_classes: 4
+num_nodes: 12
+feature_dim: '${eval:\(max\(${data.num_classes}\, int\(np.ceil\(${data.num_nodes} / np.log\(${data.num_nodes}\)**2\)\)\)\)}'
+feature_class_mean_sampling: EQUIDISTANT
+edge_probabilities: BY_SNR_AND_EXPECTED_DEGREE
+expected_degree: 2.5
+directed: False
+
+name: sbm_12

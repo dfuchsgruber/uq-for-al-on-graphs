@@ -1,0 +1,6 @@
+defaults:
+  - base_bayes_optimal
+  - trainer: oracle
+
+name: bayes_optimal
+approximation_type: VARIATIONAL_INFERENCE

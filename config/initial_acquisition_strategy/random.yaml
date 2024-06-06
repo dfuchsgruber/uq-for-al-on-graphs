@@ -1,0 +1,6 @@
+defaults:
+  - acquire_random
+
+balanced: false
+name: random
+requires_model_prediction: false

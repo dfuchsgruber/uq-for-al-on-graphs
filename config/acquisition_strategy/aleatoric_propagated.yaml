@@ -1,0 +1,7 @@
+defaults:
+  - acquire_by_prediction_attribute
+
+attribute: MAX_SCORE
+higher_is_better: false # sample nodes with low score, i.e. high uncertainty
+propagated: true
+name: aleatoric_propagated

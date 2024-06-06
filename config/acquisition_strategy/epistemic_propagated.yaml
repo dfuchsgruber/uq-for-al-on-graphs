@@ -1,0 +1,7 @@
+defaults:
+  - acquire_by_prediction_attribute
+
+attribute: PREDICTED_VARIANCE
+higher_is_better: true # acquire samples with high variance, i.e. high uncertainty
+propagated: true
+name: epistemic_propagated

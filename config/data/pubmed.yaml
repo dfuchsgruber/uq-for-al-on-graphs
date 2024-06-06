@@ -1,0 +1,12 @@
+defaults:
+# - base_npz
+  - base_torch_geometric
+root: /nfs/staff-hdd/fuchsgru/graph-al/data
+torch_geometric_dataset: PUBMED
+
+name: pubmed
+#path: /nfs/staff-hdd/fuchsgru/graph-ssl-data-raw/pubmed.npz
+#preprocessing: NONE
+num_classes: 3
+
+# has 3 classes

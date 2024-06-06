@@ -1,0 +1,4 @@
+defaults:
+  - base_uncertainty_difference
+
+name: uncertainty_difference_${acquisition_strategy.combine}_${acquisition_strategy.average}

@@ -1,0 +1,20 @@
+defaults:
+  - base_gpn
+  - trainer: gpn
+
+name: gpn
+
+# Following appendix D of https://arxiv.org/pdf/2110.14012.pdf
+
+flow_dim: 16 # 10 for amazon-photos and amazon computers
+dropout: 0.5
+batch_norm: false # use only for OGBN arxiv according to GPN paper
+inplace: false
+num_flow_layers: 10 # We only support radial layers
+
+evidence_scale: LATENT_NEW # relates to the total uncertainty budget
+
+alpha: 0.1 # teleport probability
+cached: false
+
+  

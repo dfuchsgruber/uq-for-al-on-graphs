@@ -1,0 +1,4 @@
+num_samples_train: 1
+num_samples_eval: 100
+
+dropout_at_eval: true

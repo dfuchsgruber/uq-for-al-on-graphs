@@ -1,0 +1,59 @@
+defaults:
+  - base_deterministic_sbm
+
+num_classes: 6
+num_nodes: 12
+feature_dim: 5
+directed: False
+
+# structure: we have hub nodes 0, 2, 4, 6, 8, 10
+# and periphery nodes 1, 3, 5, 7, 9, 11
+
+labels: [5, 5, 4, 4, 3, 3, 2, 2, 1, 1, 0, 0]
+edge_index:
+  - [0,  0,  0,  0,  0,  0,  2,  2,  2,  2,  2,  2,  4,  4,  4,  4,  4,  4,  6,  6,  6,  6,  6,  6,  8,  8,  8,  8,  8,  8, 10, 10, 10, 10, 10, 10,  1,  3,  5,  7,  9, 11]
+  - [2,  4,  6,  8, 10,  1,  0,  4,  6,  8, 10,  3,  0,  2,  6,  8, 10,  5,  0,  2,  4,  8, 10,  7,  0,  2,  4,  6, 10,  9,  0,  2,  4,  6,  8, 11,  0,  2,  4,  6,  8, 10]
+node_features:
+  - [0., 0., 0., 0., 0.]
+  - [0., 0., 0., 0., 0.]
+  - [0., 0., 0., 0., 0.]
+  - [0., 0., 0., 0., 0.]
+  - [0., 0., 0., 0., 0.]
+  - [0., 0., 0., 0., 0.]
+  - [0., 0., 0., 0., 0.]
+  - [0., 0., 0., 0., 0.]
+  - [0., 0., 0., 0., 0.]
+  - [0., 0., 0., 0., 0.]
+  - [0., 0., 0., 0., 0.]
+  - [0., 0., 0., 0., 0.]
+class_means:
+  - [1.0, 0., 0., 0., 0.]
+  - [0., 1.0, 0., 0., 0.]
+  - [0., 0., 1.0, 0., 0.]
+  - [0., 0., 0., 1.0, 0.]
+  - [0., 0., 1.0, 0., 1.0]
+  - [0., 0., 0., 0., 0.]
+affiliation_matrix:
+  - [0.4, 0.1, 0.1, 0.1, 0.1, 0.1]
+  - [0.1, 0.4, 0.1, 0.1, 0.1, 0.1]
+  - [0.1, 0.1, 0.4, 0.1, 0.1, 0.1]
+  - [0.1, 0.1, 0.1, 0.4, 0.1, 0.1]
+  - [0.1, 0.1, 0.1, 0.1, 0.4, 0.1]
+  - [0.1, 0.1, 0.1, 0.1, 0.1, 0.4]
+
+
+# The intuition is as follows: periphery nodes are following homophily and thus "likely" to have come from the SBM
+# whereas the hub nodes are "unlikely" to be sampled from the SBM
+# (note that our acquisition optimizes not the Bayes optimal labeling, but some observations, i.e. even if the observed
+# labels are very unlikely to have come from the underlying SBM, the oracle will try to label nodes such that this labeling is quickly reached)
+# From there it follows to have two strategies
+# a) only acquiring the periphery nodes (balanced), as they will slightly shift the (unlikely) hub nodes to their true label (the underlying SBM is homophil)
+# b) only acquiring the hub nodes, as labeling them will label them correctly by definition and due to homophily, they will also correctly label the periphery
+# what will *not* work is labeling both periphery (likely) and unlikely nodes
+# the behaviour of the oracle will be to acquire the periphery nodes, but performance will degrade as soon as it is forced to acquire non-periphery nodes
+# that is, the oracle will reach 100% accuracy as soon as all periphery nodes are labeled, but it will drop to a lower value when it starts additionally
+# labeling hub nodes: labeling e.g. hub 0 will shift all other hub's distributions towards class 0 (homphily)
+# in contrast, labeling hub nodes first has a stable 100% accuracy, as first labeling the hubs will give 100% accuracy, but labeling a periphery node
+# will not shift other periphery nodes towards this class but rather away from that (homphily)
+
+name: sbm_toy_12_with_hubs

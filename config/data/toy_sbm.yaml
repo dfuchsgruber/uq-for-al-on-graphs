@@ -1,0 +1,7 @@
+defaults:
+  - base_sbm
+
+num_classes: 3
+num_nodes: 9
+feature_dim: 2
+use_toy_data: True

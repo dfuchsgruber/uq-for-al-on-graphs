@@ -1,0 +1,8 @@
+defaults:
+  - base_coreset_appr
+
+propagated: true
+name: coreset_propagated_appr
+distance: APPR
+k: 10
+alpha: 0.2

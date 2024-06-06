@@ -1,0 +1,17 @@
+defaults:
+  - base_gcn
+  - trainer: sgd
+
+hidden_dims: [64]
+dropout: 0.8
+inplace: False
+cached: True
+name: gcn
+
+trainer:
+  optimizer:
+    lr: 1e-2
+    weight_decay: 1e-4
+  early_stopping:
+    patience: 50
+    save_model_state: True

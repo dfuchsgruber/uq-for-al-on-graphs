@@ -1,0 +1,7 @@
+defaults:
+  - base_approximate_uncertainty
+
+higher_is_better: true # Query higher uncertainty values first
+name: approximate_uncertainty_esp
+aleatoric_confidence_with_left_out_node: false
+compute_as_ratio: false

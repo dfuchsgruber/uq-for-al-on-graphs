@@ -1,0 +1,7 @@
+defaults:
+  - base_sgc
+  - trainer: sgc
+
+cached: True
+name: sgc
+solver: LIBLINEAR # for smaller datasets, this is the right choice according to https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression

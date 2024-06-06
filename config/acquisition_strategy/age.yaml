@@ -1,0 +1,6 @@
+defaults:
+  - base_age
+
+name: age
+basef: 0.995
+num_clusters: 6

@@ -1,0 +1,6 @@
+defaults:
+  - base_data_attribute
+
+attribute: OUT_DEGREE
+higher_is_better: True
+name: degree

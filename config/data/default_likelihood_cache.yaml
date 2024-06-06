@@ -1,0 +1,5 @@
+# default likelihood cache for datasets with explicit generative process
+
+likelihood_cache_database_path: ${output_base_dir}/likelihood_cache/db.json
+likelihood_cache_database_lockfile_path: ${output_base_dir}/likelihood_cache/cache.json.lock
+likelihood_cache_storage_path: ${output_base_dir}/likelihood_cache/cache/

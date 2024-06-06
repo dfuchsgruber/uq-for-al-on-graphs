@@ -1,0 +1,11 @@
+# Like sbm_12, but with a stronger signal both on features and structure
+
+defaults:
+  - base_sbm_12
+
+expected_degree: 2
+feature_sigma: 1.0
+edge_probability_snr: 2.0
+feature_class_mean_distance: 1.0
+
+name: sbm_12_strong_signal

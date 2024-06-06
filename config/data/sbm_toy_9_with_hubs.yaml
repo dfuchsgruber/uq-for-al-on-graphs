@@ -1,0 +1,35 @@
+defaults:
+  - base_deterministic_sbm
+
+num_classes: 3
+num_nodes: 9
+feature_dim: 3
+directed: False
+
+# structure: we have hub nodes 0, 3, 6 (that link to all nodes of the same class and the other hubs nodes)
+# and periphery nodes 1, 2, 4, 5, 7, 8 (that only link the hub of their class)
+
+labels: [0, 0, 0, 1, 1, 1, 2, 2, 2]
+edge_index:
+  - [0, 0, 0, 0, 1, 2, 3, 3, 3, 3, 4, 5, 6, 6, 6, 6, 7, 8]
+  - [1, 2, 3, 6, 0, 0, 4, 5, 0, 6, 3, 3, 7, 8, 0, 3, 6, 6]
+node_features:
+  - [1., 0.1, 0.1]
+  - [1., 0.1, 0.1]
+  - [1., 0.1, 0.1]
+  - [0.1, 1., 0.1]
+  - [0.1, 1., 0.1]
+  - [0.1, 1., 0.1]
+  - [0.1, 0.1, 1.]
+  - [0.1, 0.1, 1.]
+  - [0.1, 0.1, 1.]
+class_means:
+  - [1.0, 0., 0.]
+  - [0., 1.0, 0.]
+  - [0., 0., 1.0]
+affiliation_matrix:
+  - [0.5, 0.1, 0.1]
+  - [0.1, 0.5, 0.1]
+  - [0.1, 0.1, 0.5]
+
+name: sbm_toy_9_with_hubs

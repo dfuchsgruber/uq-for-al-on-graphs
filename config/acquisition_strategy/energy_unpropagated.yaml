@@ -1,0 +1,5 @@
+defaults:
+  - base_energy
+
+propagated: false
+name: energy_unpropagated

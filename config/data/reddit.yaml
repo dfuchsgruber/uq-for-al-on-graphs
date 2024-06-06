@@ -1,0 +1,9 @@
+defaults:
+  - base_torch_geometric
+
+root: /nfs/staff-hdd/fuchsgru/graph-al/data
+torch_geometric_dataset: REDDIT
+name: reddit
+num_classes: 41
+
+# has 41 classes

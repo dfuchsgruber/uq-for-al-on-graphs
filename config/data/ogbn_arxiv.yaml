@@ -1,0 +1,11 @@
+defaults:
+  - base_npz
+
+name: ogbn_arxiv
+path: /nfs/staff-hdd/fuchsgru/graph-ssl-data-raw/ogbn-arxiv.npz
+preprocessing: NONE
+use_public_split: true
+num_classes: 40
+
+# also: gcns converge slowly, try high learning rates or a large trainer.min_epochs
+# check the GPN paper for changes to the architecture (they omit weight decay and use batch norm)

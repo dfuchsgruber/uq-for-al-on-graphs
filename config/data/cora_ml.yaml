@@ -1,0 +1,9 @@
+defaults:
+#  - base_npz
+  - base_torch_geometric
+root: /nfs/staff-hdd/fuchsgru/graph-al/data
+torch_geometric_dataset: CORA_ML
+name: cora_ml
+#path: /nfs/staff-hdd/fuchsgru/graph-ssl-data-raw/cora_ml.npz
+#preprocessing: BAG_OF_WORDS
+num_classes: 7

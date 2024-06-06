@@ -1,0 +1,7 @@
+defaults:
+  - acquire_by_prediction_attribute
+
+attribute: LOG_EVIDENCE
+higher_is_better: false # acquire samples with low evidence
+propagated: false
+name: epistemic_unpropagated

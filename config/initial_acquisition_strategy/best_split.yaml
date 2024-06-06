@@ -1,0 +1,13 @@
+defaults:
+  - balanced
+  - base_best_split
+  - _self_
+
+name: best_split
+metric:
+  name: ACCURACY
+  dataset_split: VAL
+balanced: true
+higher_is_better: true
+results_directory: /ceph/hdd/staff/fuchsgru/graph-al/train_multiple_gcns/${data.name}/results
+requires_model_prediction: false

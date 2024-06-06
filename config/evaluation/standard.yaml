@@ -1,0 +1,38 @@
+defaults:
+  - base_evaluation
+
+# Metrics that are logged over the acquisition of new nodes
+acquisition_metrics:
+  - name: ACCURACY
+    dataset_split: TRAIN
+  - name: ACCURACY
+    dataset_split: VAL
+  - name: LOSS
+    dataset_split: TRAIN
+  - name: LOSS
+    dataset_split: VAL
+  - name: F1
+    dataset_split: TRAIN
+  - name: F1
+    dataset_split: VAL
+  - name: ACQUIRED_CLASS_DISTRIBUTION_ENTROPY
+
+# Calculate an AUC score for those metrics
+log_acquisition_area_under_the_curve:
+  - name: ACCURACY
+    dataset_split: TRAIN
+  - name: ACCURACY
+    dataset_split: VAL
+  - name: F1
+    dataset_split: VAL
+  - name: ACQUIRED_CLASS_DISTRIBUTION_ENTROPY
+
+# Which plots to make
+acquisition_plots:
+  - metrics:
+    - name: ACCURACY
+      dataset_split: VAL
+  - metrics:
+    - name: F1
+      dataset_split: VAL
+    

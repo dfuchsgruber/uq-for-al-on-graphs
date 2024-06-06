@@ -1,0 +1,5 @@
+defaults:
+  - acquire_random
+
+balanced: false
+name: random

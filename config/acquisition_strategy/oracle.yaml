@@ -1,0 +1,4 @@
+defaults:
+  - base_oracle_config
+
+name: oracle

@@ -1,0 +1,28 @@
+defaults:
+  - base_sgd
+  - optimizer: adam
+  - evaluation: default
+
+# Base config for models that are trained using SGD
+
+max_epochs: 10000
+loss: CROSS_ENTROPY
+commit_to_wandb_every_epoch: ~ # only commit in the end
+
+optimizer:
+  lr: 1e-3
+  weight_decay: 1e-4
+
+early_stopping:
+  monitor:
+    name: LOSS
+    dataset_split: VAL
+  higher_is_better: false
+  patience: 50
+  min_delta: 1e-3
+  save_model_state: true
+summary_metrics:
+  - name: LOSS
+    dataset_split: VAL
+  - name: ACCURACY
+    dataset_split: VAL

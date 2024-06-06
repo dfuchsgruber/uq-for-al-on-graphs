@@ -1,0 +1,12 @@
+defaults:
+#  - base_npz
+  - base_torch_geometric
+root: /nfs/staff-hdd/fuchsgru/graph-al/data
+torch_geometric_dataset: CITESEER
+
+name: citeseer
+#path: /nfs/staff-hdd/fuchsgru/graph-ssl-data-raw/citeseer.npz
+#preprocessing: NONE
+num_classes: 6
+
+# has 6 classes

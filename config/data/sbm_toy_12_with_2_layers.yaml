@@ -1,0 +1,41 @@
+defaults:
+  - base_deterministic_sbm
+
+num_classes: 4
+num_nodes: 12
+feature_dim: 2
+directed: False
+
+# structure: we have hub nodes 0, 3, 6, 9
+# and periphery nodes connected to hubs 1, 4, 7, 10
+# and periphery-periphery nodes connected to the periphery 2, 5, 8, 11
+
+labels: [3, 3, 3, 2, 2, 2, 1, 1, 1, 0, 0, 0]
+edge_index:
+  - [0, 0, 0, 0, 3, 3, 3, 3, 6, 6, 6, 6, 9, 9, 9, 9,  1, 1, 4, 4, 7, 7, 10, 10, 2, 5, 8, 11]
+  - [3, 6, 9, 1, 0, 6, 9, 4, 0, 3, 9, 7, 0, 3, 6, 10, 0, 2, 3, 5, 6, 8,  9, 11, 1, 4, 7, 10]
+node_features:
+  - [0., 0.] # hub
+  - [-0.7, 0.7]
+  - [-1.4, 1.4]
+  - [1., 0.] # hub
+  - [1.7, 0.7]
+  - [2.4, 1.4]
+  - [1., -1.] # hub
+  - [1.7, -1.7]
+  - [2.4, -2.4]
+  - [0., -1.] # hub
+  - [-0.7, -1.7]
+  - [-1.4, -2.4]
+class_means:
+  - [0.0, 0.]
+  - [0.0, 0.]
+  - [0.0, 0.]
+  - [0.0, 0.]
+affiliation_matrix:
+  - [0.4, 0.3, 0.3, 0.3]
+  - [0.3, 0.4, 0.3, 0.3]
+  - [0.3, 0.3, 0.4, 0.3]
+  - [0.3, 0.3, 0.3, 0.4]
+
+name: sbm_toy_12_with_2_layers

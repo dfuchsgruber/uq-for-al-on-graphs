@@ -1,0 +1,15 @@
+defaults:
+  - base_bayesian_gcn
+  - trainer: sgd
+  - _self_
+
+hidden_dims: [64]
+cached: True
+name: bgcn
+
+trainer:
+  loss: CROSS_ENTROPY_AND_KL_DIVERGENCE
+  kl_divergence_loss_weight: 1e-1
+  optimizer:
+    lr: 1e-2
+    weight_decay: 1e-4

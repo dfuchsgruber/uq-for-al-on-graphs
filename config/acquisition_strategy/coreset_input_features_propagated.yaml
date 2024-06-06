@@ -1,0 +1,7 @@
+defaults:
+  - base_coreset
+
+propagated: true
+name: coreset_input_features_propagated
+distance: INPUT_FEATURES
+distance_norm: 0 # might need to adapt for non bag-of-words embedded datasets

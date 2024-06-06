@@ -1,0 +1,6 @@
+defaults:
+  - gcn
+
+num_ensemble_members: 10
+name: gcn_ensemble
+inplace: false # does not work with multiple samples

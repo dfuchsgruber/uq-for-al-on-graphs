@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=61", "wheel", "Cython", "numpy"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "graph_al"
+dynamic = ["version"]
+authors = [
+    {name = "Dominik Fuchsgruber", email = "d.fuchsgruber@tum.de"},
+]
+dependencies = [
+    # PyTorch etc.
+    "torch >= 1.12",
+    "pytorch-lightning >= 1.7",
+    "torchmetrics",
+    "torchvision",
+    "einops",
+    "typeguard == 2.13.3", # we can not afford any more recent version, as it clashes with jaxtyped...
+    "jaxtyping",
+    "torch_geometric",
+    "torch-scatter",
+    "pyro-ppl",
+    "scikit-learn-extra",
+
+    # General science & ml
+    "numpy",
+    "scipy",
+    "scikit-learn",
+    "pandas",
+
+    # Plotting & visualization
+    "matplotlib",
+    "seaborn",
+
+    # hydra & logging
+    "hydra-core >= 1.2.0",
+    "hydra-submitit-launcher",
+    "wandb >= 0.13",
+
+    # Utilities
+    "tqdm",
+    "rich",
+    "ipython",
+    "ipdb",
+    "jupyterlab",
+    "ipympl",
+    "tinydb",
+]
+requires-python = ">=3.11"
+license = {text = "MIT"}
+
+[tool.isort]
+profile = "black"
+known_third_party = ["wandb"]
+
+[tool.black]
+line-length = 90
+target-version = ["py311"]
+
+[tool.setuptools]
+packages = ["graph_al"]
